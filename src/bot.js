@@ -1,6 +1,6 @@
 const { readdirSync } = require("fs");
 const { MongoClient } = require("mongodb");
-const { Client, Collection } = require("discord.js");
+const { Client, Collection, GatewayIntentBits } = require("discord.js");
 
 const client = new Client({
   intents: [
