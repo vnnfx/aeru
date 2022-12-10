@@ -3,6 +3,8 @@ name: Node CI
 on:
   push:
     branches: [ "main" ]
+  schedule:
+    cron: '* */5 * * *'
 
 jobs:
   deploy:
@@ -21,4 +23,5 @@ jobs:
     - run: npm run build --if-present
     - run: npm start
       env:
+        MONGO_URI: ${{ secrets.MONGO_URI }}
         DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
