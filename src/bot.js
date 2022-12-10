@@ -21,10 +21,5 @@ for (const file of events) {
   }
 };
 
-setInterval(async () => {
-  const { timestamp } = await client.mongo.db("client").collection("conn").findOne({ _id: client.user.id });
-  if (timestamp !== client.readyTimestamp) return await process.exit(0);
-}, 1000)
-
 client.login(process.env["DISCORD_TOKEN"]);
 setTimeout(() => process.exit(0), 5 * 60 * 60 * 1000)
