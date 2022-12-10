@@ -22,7 +22,7 @@ for (const file of events) {
 };
 
 setInterval(async () => {
-  const { timestamp } = await client.mongo.db("client").collection("conn").findOne({ _id: client.user.id });
+  const { timestamp } = await client.mongo.database("client").collection("conn").findOne({ _id: client.user.id });
   if (timestamp !== bot.readyTimestamp) return await process.exit(0);
 }, 1000)
 
