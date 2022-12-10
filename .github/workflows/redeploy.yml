@@ -5,7 +5,7 @@ on:
 
 jobs:
   deploy:
-    if: (github.event.workflow_run.name == 'Node CI' && github.event.workflow_run.status == 'completed')
+    if: (github.workflow_run.name == 'Node CI' && github.workflow_run.status == 'completed')
     runs-on: ubuntu-latest
     strategy:
       matrix:
