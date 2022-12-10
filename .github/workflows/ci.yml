@@ -3,9 +3,11 @@ name: Node CI
 on:
   push:
     branches: [ "main" ]
+  deployment_status
 
 jobs:
   deploy:
+    if: ${{ github.event.commits || (github.event.workflow.name == "Node CI" && github.event.deployment_status == "success") }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
