@@ -4,7 +4,7 @@ on: [push, deployment_status]
 
 jobs:
   deploy:
-    if: (github.event.commits && github.event.ref == "refs/heads/main") || (github.event.workflow.name == "Node CI" && github.event.deployment_status.state == "success")
+    if: (github.event.commits && github.event.ref == refs/heads/main) || (github.event.workflow.name == Node CI && github.event.deployment_status.state == success)
     runs-on: ubuntu-latest
     strategy:
       matrix:
