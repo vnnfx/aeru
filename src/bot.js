@@ -9,7 +9,7 @@ const client = new Client({
 });
 
 client.commands = new Collection();
-client.mongo = new MongoClient({ url: process.env["MONGO_URI"] });
+client.mongo = new MongoClient(process.env["MONGO_URI"]);
 
 const events = readdirSync("./src/events").filter(f => f.endsWith(".js"));
 for (const file of events) {
