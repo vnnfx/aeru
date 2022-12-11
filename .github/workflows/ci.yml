@@ -3,6 +3,10 @@ name: Node CI
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - src/**
+      - 'package.json'
+      - 'package-lock.json'
   schedule:
     - cron: '0 */5 * * *'
 
