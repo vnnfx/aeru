@@ -12,7 +12,7 @@ client.commands = new Collection();
 client.mongo = new MongoClient(process.env["MONGO_URI"]);
 
 const events = readdirSync("./src/events").filter(f => f.endsWith(".js"));
-const commands = readdirSync('./src/commands").filter(f => f.endsWith(".js"));
+const commands = readdirSync("./src/commands").filter(f => f.endsWith(".js"));
 
 for (const file of events) {
   const event = require(`./events/${file}`);
