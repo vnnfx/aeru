@@ -12,6 +12,8 @@ client.commands = new Collection();
 client.mongo = new MongoClient(process.env["MONGO_URI"]);
 
 const events = readdirSync("./src/events").filter(f => f.endsWith(".js"));
+const commands = readdirSync('./src/commands").filter(f => f.endsWith(".js"));
+
 for (const file of events) {
   const event = require(`./events/${file}`);
   if (event.once) {
@@ -21,5 +23,9 @@ for (const file of events) {
   }
 };
 
+for (const file of commands) {
+  const command = require(`./commands/${file}`);
+  client.commands.set(file.split(".js")[0], command);
+};
+
 client.login(process.env["DISCORD_TOKEN"]);
-setTimeout(() => process.exit(0), 5 * 60 * 60 * 1000)
