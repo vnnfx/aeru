@@ -7,7 +7,7 @@ module.exports = {
     .setDMPermission(false),
   async execute(interaction) {
     await interaction.reply({
-      content: `Ehe! ${Date.now() - interaction.createdTimestamp}ms`
+      content: `Ehe! ${Date.now() - interaction.createdTimestamp}ms ((≧▽≦))`
     })
   }
 };
