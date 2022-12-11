@@ -1,4 +1,4 @@
-const { ApplicationCommandTypes } = require("discord.js");
+const { ApplicationCommandTyp } = require("discord.js");
 
 module.exports = {
   name: "interactionCreate",
@@ -7,7 +7,7 @@ module.exports = {
     if (timestamp !== interaction.client.readyTimestamp) return await process.exit(0);
 
     if (!interaction.isCommand()) {
-      const command = await interaction.client.commands.find(command => command.data.name === interaction.commandName && command.data.type === [undefined, ApplicationCommandTypes.User, ApplicationCommandTypes.Message][interaction.commandType - 1]);
+      const command = await interaction.client.commands.find(command => command.data.name === interaction.commandName && command.data.type === [undefined, ApplicationCommandType.User, ApplicationCommandType.Message][interaction.commandType - 1]);
       if (command) return await command.execute(interaction);
     }
   }
