@@ -3,6 +3,8 @@ module.exports = {
   once: true,
   async execute(client) {
     await console.log(`Connected! ☔`);
+
+    await client.application.fetch();
     await client.application.commands.set(client.commands.map(command => command.data));
 
     await client.mongo.connect();
