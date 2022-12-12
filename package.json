@@ -1,5 +1,5 @@
 {
-  "name": "nyv",
+  "name": "aeru",
   "version": "1.0.0",
   "description": "babu dc☔✨",
   "main": "src/bot.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/imnyv/nyv.git"
+    "url": "git+https://github.com/imnyv/aeru.git"
   },
   "author": "imnyv",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/imnyv/nyv/issues"
+    "url": "https://github.com/imnyv/aeru/issues"
   },
-  "homepage": "https://github.com/imnyv/nyv#readme",
+  "homepage": "https://github.com/imnyv/aeru#readme",
   "dependencies": {
     "discord.js": "^14.7.1",
     "mongodb": "^4.12.1"
